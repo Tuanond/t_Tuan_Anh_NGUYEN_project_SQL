@@ -56,3 +56,6 @@ SELECT
 FROM czechia_payroll AS cpay
 LEFT JOIN czechia_price AS cp
 	ON cpay.payroll_year = YEAR(cp.date_from);
+
+-- sadsa
+-- asdsa
