@@ -40,8 +40,8 @@ FROM czechia_price_category AS cpc;
 
 -- Číselníky sdílených informací o ČR:
 
-czechia_region – Číselník krajů České republiky dle normy CZ-NUTS 2.
-czechia_district – Číselník okresů České republiky dle normy LAU.
+-- czechia_region – Číselník krajů České republiky dle normy CZ-NUTS 2.
+-- czechia_district – Číselník okresů České republiky dle normy LAU.
 
 -- Dodatečné tabulky:
 
@@ -55,7 +55,7 @@ SELECT
 	*
 FROM czechia_payroll AS cpay
 LEFT JOIN czechia_price AS cp
-	ON cpay.payroll_year = YEAR(cp.date_from);
+	ON cpay.payroll_year = YEAR(cp.date_from)
+WHERE cpay.value_type_code = '5958'
+ORDER BY cpay.payroll_year, cp.date_from;
 
--- sadsa
--- asdsa
