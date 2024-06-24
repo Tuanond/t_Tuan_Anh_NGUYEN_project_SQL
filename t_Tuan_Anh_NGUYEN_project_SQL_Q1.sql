@@ -4,7 +4,7 @@
 SELECT
 	cpib.name,
 	cp.payroll_year,
-	avg(cp.value) AS average_value
+	round(avg(cp.value),0) AS average_value
 FROM czechia_payroll AS cp
 LEFT JOIN czechia_payroll_industry_branch AS cpib 
 	ON cp.industry_branch_code = cpib.code 
